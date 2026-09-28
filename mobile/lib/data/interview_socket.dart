@@ -4,7 +4,7 @@
 /// `frontend/app/src/pages/useAiInterview.ts` 가 같은 일을 한다.
 ///
 /// ```
-/// wss://api.seuk.suvisdev.cloud/ai/ws/interview/{token}
+/// wss://api.ats.woojeongalex.cloud/ai/ws/interview/{token}
 /// ```
 ///
 /// ## 소켓은 하나뿐이다

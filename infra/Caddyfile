@@ -1,4 +1,4 @@
-api.seuk.suvisdev.cloud {
+{$API_DOMAIN} {
 	handle_path /demo/* {
 		root * /srv/demo
 		file_server

@@ -116,12 +116,12 @@ services:
     ports:
       - "127.0.0.1:5678:5678"
     environment:
-      N8N_HOST: api.seuk.suvisdev.cloud
+      N8N_HOST: ${API_DOMAIN}
       N8N_PROTOCOL: https
       N8N_PORT: "5678"
       N8N_PATH: /n8n/
-      WEBHOOK_URL: https://api.seuk.suvisdev.cloud/n8n/
-      N8N_EDITOR_BASE_URL: https://api.seuk.suvisdev.cloud/n8n/
+      WEBHOOK_URL: https://${API_DOMAIN}/n8n/
+      N8N_EDITOR_BASE_URL: https://${API_DOMAIN}/n8n/
       N8N_PROXY_HOPS: "1"
       N8N_ENCRYPTION_KEY: ${N8N_ENCRYPTION_KEY:?set in .env — infra/.env.example}
       GENERIC_TIMEZONE: Asia/Seoul
@@ -158,6 +158,8 @@ services:
       - "443:443"
     environment:
       # n8n 편집 화면 Basic Auth — 팀 전원 공유 (2026-09-07 결정: 누가 빠져도 나머지가 진행할 수 있게)
+      # 사이트 주소 — Caddyfile 의 {$API_DOMAIN} 을 채운다. .env 한 곳에서만 정한다
+      API_DOMAIN: ${API_DOMAIN:?set in .env}
       N8N_BASIC_AUTH_USER: ${N8N_BASIC_AUTH_USER:-arda}
       N8N_BASIC_AUTH_HASH: ${N8N_BASIC_AUTH_HASH:?set in .env — infra/.env.example}
     volumes:

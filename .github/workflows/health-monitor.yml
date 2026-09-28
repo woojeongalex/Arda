@@ -24,8 +24,8 @@ jobs:
     permissions:
       issues: write
     env:
-      API: https://api.seuk.suvisdev.cloud
-      FRONT: https://seuk.suvisdev.cloud
+      API: https://api.ats.woojeongalex.cloud
+      FRONT: https://ats.woojeongalex.cloud
       TITLE: "🔴 외부 헬스체크 실패 — 서버 밖에서 서비스가 안 보인다"
       GH_TOKEN: ${{ github.token }}
       REPO: ${{ github.repository }}

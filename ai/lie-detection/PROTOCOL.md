@@ -4,8 +4,8 @@
 > 이 문서가 원본이다. 값을 바꾸면 `interview_ws.py` 와 같이 고친다.
 
 ```
-wss://api.seuk.suvisdev.cloud/ai/ws/interview/{token}              ← 지원자 기기
-wss://api.seuk.suvisdev.cloud/ai/ws/interview/{token}?role=recruiter  ← 담당자 방 (얼굴만)
+wss://api.ats.woojeongalex.cloud/ai/ws/interview/{token}              ← 지원자 기기
+wss://api.ats.woojeongalex.cloud/ai/ws/interview/{token}?role=recruiter  ← 담당자 방 (얼굴만)
 ```
 
 `token` 은 메일 링크의 그 토큰이다. 별도 로그인은 없다.

@@ -70,7 +70,7 @@ fi
 
 h "n8n 헬스 (localhost:5678 — ADR-0030)"
 if curl -sf -m 5 http://localhost:5678/healthz >/dev/null 2>&1 || curl -sf -m 5 http://localhost:5678/n8n/healthz >/dev/null 2>&1; then
-  echo "ok — 편집 화면 https://api.seuk.suvisdev.cloud/n8n/ (Basic Auth, 팀 공유)"
+  echo "ok — 편집 화면 https://api.ats.woojeongalex.cloud/n8n/ (Basic Auth, 팀 공유)"
 else
   c "1;31" "응답 없음 — 컨테이너가 없으면 아직 미설치(07-deploy n8n 절), 있으면 docker compose logs n8n --tail 50"; echo
 fi

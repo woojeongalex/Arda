@@ -25,7 +25,7 @@ from pathlib import Path
 
 import yaml
 
-BASE = "https://api.seuk.suvisdev.cloud/api/v1"
+BASE = "https://api.ats.woojeongalex.cloud/api/v1"
 HERE = Path(__file__).parent
 OUT_DIR = HERE.parents[2] / "docs" / "07_eval" / "fit-check-results"
 

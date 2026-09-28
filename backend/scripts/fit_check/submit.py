@@ -33,7 +33,7 @@ from pathlib import Path
 
 import yaml  # backend 의존성(pyyaml)에 있다
 
-BASE = "https://api.seuk.suvisdev.cloud/api/v1"
+BASE = "https://api.ats.woojeongalex.cloud/api/v1"
 HERE = Path(__file__).parent
 
 for _stream in (sys.stdout, sys.stderr):  # Windows 콘솔 cp949 대비

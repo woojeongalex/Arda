@@ -25,7 +25,7 @@ import urllib.error
 import urllib.request
 from pathlib import Path
 
-BASE = "https://api.seuk.suvisdev.cloud/api/v1"
+BASE = "https://api.ats.woojeongalex.cloud/api/v1"
 HERE = Path(__file__).parent
 DEADLINE = "2026-10-15"
 

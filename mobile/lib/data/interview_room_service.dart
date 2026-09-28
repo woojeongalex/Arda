@@ -158,7 +158,7 @@ class InterviewRoomService extends ChangeNotifier {
       return;
     }
 
-    // 2) WebSocket 시그널링. api.seuk.suvisdev.cloud → wss://.../ws/...
+    // 2) WebSocket 시그널링. api.ats.woojeongalex.cloud → wss://.../ws/...
     final wsBase = ApiConfig.base
         .replaceFirst('https://', 'wss://')
         .replaceFirst('http://', 'ws://');

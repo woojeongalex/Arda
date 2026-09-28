@@ -23,7 +23,7 @@
 
 ## 필요한 것 (전부 Actions secret)
 
-    ARDA_API_BASE      https://api.seuk.suvisdev.cloud/api/v1
+    ARDA_API_BASE      https://api.ats.woojeongalex.cloud/api/v1
     ARDA_API_TOKEN     admin JWT — **secret 이 아니라 워크플로가 매 실행마다
                        로그인해서 넣어 준다.** JWT 는 12시간이면 만료돼서
                        (security.py `JWT_EXPIRES_MINUTES`) secret 에 박아 두면

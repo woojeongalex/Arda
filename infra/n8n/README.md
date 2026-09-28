@@ -23,7 +23,7 @@ api: stage_service.publish_all (MAIL_DISPATCH=n8n)
 
 ## 편집 규칙 — 팀 전원
 
-- 편집 화면 `https://api.seuk.suvisdev.cloud/n8n/`, Basic Auth 계정은 **팀 공유**(2026-09-07 결정: 누가 빠져도 나머지가 진행). 비밀번호는 팀 채널 고정 메시지, 저장소엔 없다.
+- 편집 화면 `https://api.ats.woojeongalex.cloud/n8n/`, Basic Auth 계정은 **팀 공유**(2026-09-07 결정: 누가 빠져도 나머지가 진행). 비밀번호는 팀 채널 고정 메시지, 저장소엔 없다.
 - n8n 첫 접속 때 "owner 계정" 을 만들라고 한다 — 이것도 팀 공유 계정 하나로 만들고 같은 곳에 적는다.
 - 화면에서 고친 뒤 **반드시** 워크플로 메뉴 → Download(export) → 이 폴더에 덮어쓰고 PR. export 안 한 변경은 n8n 볼륨 백업에만 남는다.
 - 자격 증명(AWS 키 등)은 export 에 안 들어간다 — n8n 의 Credentials 화면에서 만들고, 어떤 이름으로 만들었는지 여기 표에 적는다.
@@ -54,7 +54,7 @@ SMTP 계정 값만 로컬용으로 갈아 끼우면 같은 워크플로가 로�
 
 셋 중 하나만 어긋나면 자산이 404 → 화면이 하얗게 뜬다. 진단:
 ```bash
-curl -sI -u '<user>:<pass>' https://api.seuk.suvisdev.cloud/n8n/assets/index-<hash>.js | head -3
+curl -sI -u '<user>:<pass>' https://api.ats.woojeongalex.cloud/n8n/assets/index-<hash>.js | head -3
 ```
 `HTTP/2 404` + `content-type: text/html` 이면 자산 라우팅 어긋남.
 

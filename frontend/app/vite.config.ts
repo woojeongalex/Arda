@@ -7,7 +7,7 @@ export default defineConfig(({ mode }) => {
 
   /* 개발 중 API 를 어디로 보낼지. 로컬 백엔드를 띄웠으면
      .env.local 에 VITE_DEV_API_TARGET=http://localhost:8000 을 넣는다. */
-  const target = env.VITE_DEV_API_TARGET || 'https://api.seuk.suvisdev.cloud'
+  const target = env.VITE_DEV_API_TARGET || 'https://api.ats.woojeongalex.cloud'
 
   /* WSL 에서 `/mnt/c` 의 파일을 볼 때는 **파일 변경 감지가 안 된다.**
      Windows 쪽 쓰기가 inotify 로 안 올라와서, 고친 파일이 화면에 영영

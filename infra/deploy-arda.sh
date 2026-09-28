@@ -2,7 +2,7 @@
 # 운영 서버 자동 배포 스크립트 — 서버 /home/ubuntu/deploy-arda.sh 의 **저장소 사본** (2026-09-07 회수).
 #
 # 서버 것이 진실이고 여기는 사본이다. 서버를 바꾸면 여기도 같은 커밋에서, 여기를 바꾸면
-# 서버에 복사한다:  curl -sL https://raw.githubusercontent.com/Seuk-Team/Arda/main/infra/deploy-arda.sh -o ~/deploy-arda.sh
+# 서버에 복사한다:  curl -sL https://raw.githubusercontent.com/woojeongalex/arda/main/infra/deploy-arda.sh -o ~/deploy-arda.sh
 # (배포 tar 는 이 파일을 안 덮는다 — compose·Caddyfile 과 같은 규칙.)
 #
 # 부르는 쪽: systemd `arda-deploy.timer` (2분마다 `arda-deploy.service` → 이 스크립트).
