@@ -79,6 +79,22 @@ services:
       - "127.0.0.1:5000:5000"   # 로컬 디버그용. 운영은 caddy /ai/* 로만 연다
     logging: *default-logging
 
+  # 로컬 메일 수신함 (개인 운영본, 2026-09-30). 운영에는 없다 — 여기서만 쓴다.
+  #
+  # n8n 의 SMTP 노드를 지메일 대신 여기로 보내면 **메일 경로 전체를 실제로 돌려 보면서도
+  # 아무에게도 메일이 가지 않는다.** 지메일 앱 비밀번호를 만들지 않아도 되고, 무엇보다
+  # 렌더된 제목·본문·수신자를 눈으로 확인할 수 있다(MAIL_DRY_RUN 은 로그에만 찍힌다).
+  #   SMTP  mailpit:1025 (인증 없음) · 화면 http://localhost:8025
+  mailpit:
+    image: axllent/mailpit:latest
+    ports:
+      - "127.0.0.1:8025:8025"   # 받은 메일을 보는 화면
+    environment:
+      MP_SMTP_AUTH_ACCEPT_ANY: "true"
+      MP_SMTP_AUTH_ALLOW_INSECURE: "true"
+      TZ: Asia/Seoul
+    logging: *default-logging
+
   n8n:
     image: n8nio/n8n:2.37.11
     ports:
