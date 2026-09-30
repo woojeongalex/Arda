@@ -53,7 +53,9 @@ services:
     env_file: ./.env.backend
     command: /app/.venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000
     ports:
-      - "127.0.0.1:8000:8000"
+      # 개인 운영본(2026-09-30): 8000 은 이 PC 의 음악 챌린지 백엔드가 잡고 있어 8001 로 옮겼다.
+      # 정문은 caddy(8080)이고 이 포트는 디버그용 직접 접속이라 스택 검증에는 영향이 없다.
+      - "127.0.0.1:8001:8000"
     logging: *default-logging
     depends_on:
       db:
@@ -108,6 +110,39 @@ services:
     depends_on:
       - api
 
+  # 로컬 S3 (개인 운영본, 2026-09-30). 원본 로컬 스택은 S3_ENDPOINT_URL 을 비워 **실제 AWS
+  # 버킷**을 썼다(08-local-setup 5절 「운영과 다른 점」). 개인 운영본은 과금을 0 으로 두기로
+  # 해서 루트 docker-compose.yml 의 minio 를 이 스택으로 가져왔다.
+  # .env.backend 의 AWS_ACCESS_KEY_ID/SECRET 이 아래 두 줄과 같아야 서명이 맞는다.
+  minio:
+    image: minio/minio:latest
+    command: server /data
+    environment:
+      MINIO_ROOT_USER: arda-local
+      MINIO_ROOT_PASSWORD: arda-local-secret
+    ports:
+      - "9000:9000"
+    volumes:
+      - miniodata:/data
+    logging: *default-logging
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:9000/minio/health/live"]
+      interval: 3s
+      timeout: 3s
+      retries: 20
+
+  # 버킷(arda-local) 생성 one-shot. 이미 있으면 조용히 지나간다
+  minio-init:
+    image: minio/mc
+    depends_on:
+      minio:
+        condition: service_healthy
+    entrypoint: >
+      /bin/sh -c "
+      mc alias set local http://minio:9000 arda-local arda-local-secret &&
+      mc mb --ignore-existing local/arda-local
+      "
+
   caddy:
     image: caddy:2-alpine
     ports:
@@ -128,3 +163,4 @@ volumes:
   pgdata:
   n8n_data:
   caddy_data:
+  miniodata:

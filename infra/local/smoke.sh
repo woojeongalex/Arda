@@ -8,13 +8,15 @@ DC=(docker compose -f "$HERE/docker-compose.yml")
 pass=0; fail=0
 ok()   { echo "  ✅ $1"; pass=$((pass+1)); }
 bad()  { echo "  ❌ $1"; fail=$((fail+1)); }
-code() { curl -s -o /dev/null -w '%{http_code}' --max-time 15 "$@"; }
+# 개인 운영본(2026-09-30): api 직접 포트는 compose 에서 8001 로 옮겼다(8000 은 다른 스택이 쓴다).
+API_PORT="${API_PORT:-8001}"
+code() { curl -s -o /dev/null -w "%{http_code}" --max-time 15 "$@"; }
 
 echo "[컨테이너]"
 "${DC[@]}" ps --format '  {{.Service}}\t{{.Status}}' 2>/dev/null
 
 echo "[api 직접 · caddy 경유]"
-[ "$(code http://localhost:8000/health)" = 200 ] && ok "api /health 200" || bad "api /health"
+[ "$(code http://localhost:$API_PORT/health)" = 200 ] && ok "api :$API_PORT /health 200" || bad "api /health"
 [ "$(code http://localhost:8080/health)" = 200 ] && ok "caddy → api /health 200" || bad "caddy → api /health"
 c=$(code http://localhost:8080/api/v1/internal/email-logs/1/render); [ "$c" = 401 ] && ok "내부 API 서비스 토큰 게이트 401" || bad "내부 API 기대 401, 실제 $c"
 c=$(code http://localhost:8080/api/v1/integrity/chain);            [ "$c" = 401 ] && ok "무결성 API 인증 게이트 401" || bad "무결성 API 기대 401, 실제 $c"
