@@ -2,9 +2,10 @@
 
 # (Applicant Tracking System(ATS))
 
-Seuk의 팀 프로젝트입니다. **이 저장소는 개인 운영본**(`woojeongalex/arda`)이고,
-팀 원본은 [`Seuk-Team/Arda`](https://github.com/Seuk-Team/Arda) 입니다.
-운영본에서 달라진 것(주소·서버·키)은 [`docs/00_overview/11-personal-ops.md`](docs/00_overview/11-personal-ops.md) 에만 적습니다.
+Seuk 의 팀 프로젝트입니다. **이 저장소는 [`Seuk-Team/Arda`](https://github.com/Seuk-Team/Arda) 의 포크**이고,
+개인 운영본(주소·서버·키를 내 것으로 바꾼 것)입니다.
+달라진 것은 [`docs/00_overview/11-personal-ops.md`](docs/00_overview/11-personal-ops.md) 에만 적고,
+팀 시절 기록(ADR·배포 문서)은 고치지 않습니다 — 지난 결정을 고쳐 쓰면 기록이 거짓말을 합니다.
 
 > 📄 프로젝트 소개 사이트 <https://ats.suvisdev.cloud> · 실제 서비스 <https://seuk.suvisdev.cloud>
 
