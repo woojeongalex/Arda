@@ -17,7 +17,11 @@ Seuk 의 팀 프로젝트입니다. **이 저장소는 [`Seuk-Team/Arda`](https:
 **인증(A1~A3)과 단계 전환 로직(D3)** 을 이관받았습니다
 ([04-team.md](docs/00_overview/04-team.md)).
 
-**커밋 304개**로 전체 1,098개 중 두 번째입니다 — `git shortlog -sne --all` 로 확인됩니다.
+**팀 저장소에 들어간 커밋 301개**로 전체 1,095개 중 두 번째입니다 (2026-08-24 ~ 09-18).
+[팀 저장소 기여자 그래프](https://github.com/Seuk-Team/Arda/graphs/contributors)에서 로그인 없이 확인할 수 있고, 같은 값입니다.
+
+> 이 포크에는 그 뒤에 더한 개인 운영본 커밋이 몇 개 있다. 위 숫자는 그걸 빼고
+> `git log upstream/main --author=...` 로 센 것이다.
 
 | 영역 | 커밋이 닿은 곳 |
 |:--|:--|
