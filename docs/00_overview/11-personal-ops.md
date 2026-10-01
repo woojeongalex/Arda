@@ -53,6 +53,10 @@
   - AllowedMethods `PUT` · AllowedOrigins 위 주소 + `http://localhost:5173` · AllowedHeaders `*`
 - IAM 은 이 버킷만 만지는 전용 사용자로 만든다. 개인 계정의 다른 것에 손이 닿지 않게.
 
+> **콘솔에서 그대로 붙여넣을 CORS·IAM JSON 은 [12-s3-setup](12-s3-setup.md) 에 있다.**
+> 코드가 부르는 S3 동작을 저장소 전체에서 세어 보고 거기에만 권한을 맞췄다
+> (`put_object`·`get_object` 둘뿐이다).
+
 ## 데이터
 
 **팀 운영 DB 를 복원하지 않는다.** 실제 지원자의 이름·이메일·이력서가 들어 있고, 그 사람들이 동의한 범위 밖이다. 새로 만든다:
