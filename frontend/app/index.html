@@ -2,9 +2,30 @@
 <html lang="ko">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Arda ATS</title>
+    <meta
+      name="description"
+      content="공고 등록부터 지원서 접수, AI 서류 심사, AI 면접 실시간 분석, 합불 통보까지 한 곳에서. 최종 판단은 사람이 합니다."
+    />
+
+    <!-- 아이콘. svg 를 못 읽는 쪽(옛 브라우저·북마크·크롤러)이 /favicon.ico 를 직접 찾는다 -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- 링크 미리보기. 없으면 메신저·슬랙에 주소만 뜬다.
+         robots.txt 가 색인을 막는 것과는 별개다 — 미리보기는 검색이 아니라 붙여넣기에서 쓰인다. -->
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Arda" />
+    <meta property="og:locale" content="ko_KR" />
+    <meta property="og:title" content="Arda — AI 채용 지원자 관리 시스템" />
+    <meta
+      property="og:description"
+      content="공고 등록부터 지원서 접수, AI 서류 심사, AI 면접 실시간 분석, 합불 통보까지 한 곳에서."
+    />
+    <meta property="og:image" content="/og.png" />
+    <meta name="twitter:card" content="summary_large_image" />
   </head>
   <body>
     <div id="root"></div>
